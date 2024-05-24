@@ -1,6 +1,9 @@
 import { cartModel } from "../models/cart.model.js";
 import { productModel } from "../models/product.model.js";
 
+
+// DAO Layers:
+
 const getById = async (id) => {
   const cart = await cartModel.findById(id);
   return cart;

@@ -3,6 +3,7 @@ import productDao from "../dao/mongoDao/product.dao.js";
 const router = Router();
 
 // Routes
+// Get route:
 router.get("/", async (req, res) => {
   try {
     const { limit, page, sort, category, status } = req.query;
@@ -34,6 +35,7 @@ router.get("/", async (req, res) => {
   }
 });
 
+// GetbyId route:
 router.get("/:pid", async (req, res) => {
   try {
     const { pid } = req.params; // Todos los parámetros siempre vienen en formato string
@@ -48,6 +50,7 @@ router.get("/:pid", async (req, res) => {
   }
 });
 
+// Post route:
 router.post("/", async (req, res) => {
   try {
     const product = req.body;
@@ -60,6 +63,7 @@ router.post("/", async (req, res) => {
   }
 });
 
+// Put route:
 router.put("/:pid", async (req, res) => {
   try {
     const { pid } = req.params;
@@ -75,6 +79,7 @@ router.put("/:pid", async (req, res) => {
   }
 });
 
+// Delete route:
 router.delete("/:pid", async (req, res) => {
   try {
     const { pid } = req.params;

@@ -1,8 +1,10 @@
 import mongoose from "mongoose";
 import mongoosePaginate from "mongoose-paginate-v2";
 
+// Product collection:
 const productCollection = "products";
 
+// Product schema for documents:
 const productSchema = new mongoose.Schema({
   title: {
     type: String,

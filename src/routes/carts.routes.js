@@ -2,6 +2,8 @@ import { Router } from "express";
 import cartDao from "../dao/mongoDao/cart.dao.js";
 const router = Router();
 
+// ROUTES
+// Post route:
 router.post("/", async (req, res) => {
   try {
     const cart = await cartDao.create();
@@ -13,6 +15,7 @@ router.post("/", async (req, res) => {
   }
 });
 
+// Post route - Add product to cart:
 router.post("/:cid/product/:pid", async (req, res) => {
   try {
     const { cid, pid } = req.params;
@@ -28,6 +31,7 @@ router.post("/:cid/product/:pid", async (req, res) => {
   }
 });
 
+// Put route - update quantity product in cart:
 router.put("/:cid/product/:pid", async (req, res) => {
   try {
     const { cid, pid } = req.params;
@@ -44,6 +48,7 @@ router.put("/:cid/product/:pid", async (req, res) => {
   }
 });
 
+// Delete route - Delete product in cart:
 router.delete("/:cid/product/:pid", async (req, res) => {
   try {
     const { cid, pid } = req.params;
@@ -58,6 +63,7 @@ router.delete("/:cid/product/:pid", async (req, res) => {
   }
 });
 
+// Get route - get cart by id:
 router.get("/:cid", async (req, res) => {
   try {
     const { cid } = req.params;
@@ -71,6 +77,7 @@ router.get("/:cid", async (req, res) => {
   }
 });
 
+// Put route - update cart:
 router.put("/:cid", async (req, res) => {
   try {
     const { cid } = req.params;
@@ -86,6 +93,7 @@ router.put("/:cid", async (req, res) => {
   
 })
 
+// Delete route - Delete all products in cart:
 router.delete("/:cid", async (req, res) => {
   try {
     const { cid } = req.params;
